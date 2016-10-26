@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME=reactnative
+CONTAINER_NAME=${1:-reactnative}
 
 # Function to determine if named docker instance is already running
 check_running () {
@@ -35,4 +35,3 @@ docker run \
        -e DISPLAY="$DISPLAY" \
        --name $CONTAINER_NAME \
        react-native /bin/bash
-       
