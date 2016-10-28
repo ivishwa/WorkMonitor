@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "15.3.2",
     "react-native": "0.36.0",
-    "react-native-elements": "^0.6.2"
+    "react-native-elements": "^0.6.2",
+    "realm": "^0.14.3"
   },
   "jest": {
     "preset": "jest-react-native"
