@@ -14,6 +14,7 @@ import {observable} from 'mobx';
 import {observer} from 'mobx-react/native';
 import App from './Components/App';
 import MenuComponent from './Components/MenuComponent';
+import menuButton from './Components/NavigationItems';
 
 @observer
 export default class WorkMonitor extends Component {
@@ -36,7 +37,7 @@ export default class WorkMonitor extends Component {
         renderNavigationView={()=><MenuComponent/>}
         >
         <Router>
-          <Scene key="root">
+          <Scene key="root" >
             <Scene key="activity" component={App} title="Activity" initial={true} toggleSideMenu={this.toggleSideMenu}/>
           </Scene>
         </Router>
