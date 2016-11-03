@@ -25,13 +25,12 @@ export default class WorkMonitor extends Component {
   @observable toggle = false;
   toggleSideMenu () {
     this.toggle = !this.toggle;
+    (this.toggle)? this._drawer.openDrawer(): this._drawer.closeDrawer();
   }
   render() {
-    const drawer = this.refs['drawer'];
-    (this.toggle)? drawer.openDrawer(): drawer.closeDrawer();
     return (
       <DrawerLayoutAndroid
-        ref={'drawer'}
+        ref={(ref) => this._drawer = ref}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         drawerWidth={300}
         renderNavigationView={()=><MenuComponent/>}
