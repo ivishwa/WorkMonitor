@@ -2,15 +2,16 @@ import React , { Component } from 'react';
 import {
   View,
   Text,
+  StatusBar
 } from 'react-native';
-
+import NavigationBar from 'react-native-navbar';
 import {
   Button
 } from 'react-native-elements';
 class App extends Component {
   render() {
     return (
-      <View>
+      <View style={{flex:1, paddingTop: 50}}>
       <Button
         raised
         icon={{name: 'cached'}}

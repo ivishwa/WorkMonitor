@@ -9,7 +9,7 @@ import {
 import {
   SideMenu
 } from 'react-native-elements'
-
+import {Scene, Router} from 'react-native-router-flux';
 import {observable} from 'mobx';
 import {observer} from 'mobx-react/native';
 import App from './Components/App';
@@ -35,7 +35,11 @@ export default class WorkMonitor extends Component {
         drawerWidth={300}
         renderNavigationView={()=><MenuComponent/>}
         >
-        <App toggleSideMenu={this.toggleSideMenu}/>
+        <Router>
+          <Scene key="root">
+            <Scene key="activity" component={App} title="Activity" initial={true} toggleSideMenu={this.toggleSideMenu}/>
+          </Scene>
+        </Router>
       </DrawerLayoutAndroid>
     );
   }
