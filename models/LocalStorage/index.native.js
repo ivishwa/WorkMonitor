@@ -4,7 +4,7 @@ import Monitor from '../Monitor';
 
 export let realm = new Realm({schema: [Monitor, Activity]});
 
-export default class LocalStorage {
+export class LocalStorage {
 
   save(key, value) {
     realm.write(()=> {
@@ -23,3 +23,6 @@ export default class LocalStorage {
     return ob;
   }
 }
+
+const ls = new LocalStorage();
+export default ls;
