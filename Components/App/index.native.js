@@ -1,8 +1,7 @@
 import React , { Component } from 'react';
 import {
   View,
-  Text,
-  StatusBar
+  Text
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 import {
@@ -12,12 +11,6 @@ class App extends Component {
   render() {
     return (
       <View style={{flex:1, paddingTop: 50}}>
-      <Button
-        raised
-        icon={{name: 'cached'}}
-        title='RAISED WITH ICON'
-        fontFamily='Comic Sans MS'
-        onPress={()=> console.log("Button",this.props.toggleSideMenu())}/>
       </View>
     );
   }
