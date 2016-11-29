@@ -37,6 +37,13 @@ export class LocalStorage {
     }
     return ob;
   }
+
+  clearDB(key){
+    realm.write(() => {
+      let ob = realm.objects(key);
+      realm.delete(ob)
+    })
+  }
 }
 
 const ls = new LocalStorage();
