@@ -3,14 +3,13 @@ import {
   View,
   Text
 } from 'react-native';
-import NavigationBar from 'react-native-navbar';
-import {
-  Button
-} from 'react-native-elements';
+import Activity from '../../models/Activity';
 class App extends Component {
   render() {
+    const activity = Activity.activityList
     return (
       <View style={{flex:1, paddingTop: 50}}>
+
       </View>
     );
   }
