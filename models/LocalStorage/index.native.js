@@ -1,9 +1,24 @@
 import Realm from 'realm';
-import Activity from '../Activity';
-import Monitor from '../Monitor';
+const schema = {
+'activity': {
+  name: 'Activity',
+  properties: {
+    name:  'string',
+    records: {type: 'list', objectType: 'Monitor'},
+      picture: {type: 'string', optional: true}, // optional property
+      description: {type: 'string', optional: true}
+    }
+  },
+  'monitor':  {
+    name: 'Monitor',
+    properties: {
+      startTime: 'date',
+      endTime: 'date'
+    }
+  }
+}
 
-export let realm = new Realm({schema: [Monitor, Activity]});
-
+export let realm = new Realm({schema: [schema.monitor, schema.activity]});
 export class LocalStorage {
 
   save(key, value) {

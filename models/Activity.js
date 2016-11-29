@@ -1,12 +1,19 @@
-export class Activity {
+import { observable, computed } from 'mobx';
+import LS from './LocalStorage';
 
+export class Activity {
+	@observable activityListCache = []
+
+	@computed get activityList() {
+		if(!this.activityListCache.length)
+			this.fetchActivity()
+		return this.activityListCache
+	}
+
+	fetchActivity(){
+		return Promise.resolve(() => this.activityListCache = LS.read('Activity') )
+	}
 }
-Activity.schema = {
-  name: 'Activity',
-  properties: {
-    name:  'string',
-    records: {type: 'list', objectType: 'Monitor'},
-    picture: {type: 'string', optional: true}, // optional property
-    description: {type: 'string', optional: true}
-  }
-}
+
+const activity = new Activity();
+export default  activity;
