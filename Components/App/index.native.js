@@ -7,6 +7,8 @@ import {
 import { List, ListItem } from 'react-native-elements';
 import Activity from '../../models/Activity';
 
+import ActionButton from 'react-native-action-button';
+
 @observer
 class App extends Component {
   render() {
@@ -17,12 +19,17 @@ class App extends Component {
           {
             Object.keys(activity).map((l) => (
                 <ListItem
+                  onPress={() => console.log("Hiee")}
                   key={l}
                   title={activity[l].name}
                   />
               ))
           }
         </List>
+        <ActionButton
+          buttonColor="rgba(231,76,60,1)"
+          onPress={() => console.log("Hiee")}
+        />
       </View>
     );
   }
