@@ -3,7 +3,7 @@ import LS from './LocalStorage';
 
 export class Activity {
 	@observable activityListCache = {};
-
+	@observable selectedActivity = "";
 	@computed get activityList() {
 		if(Object.keys(this.activityListCache).length){
 			return this.activityListCache
