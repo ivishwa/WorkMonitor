@@ -19,7 +19,16 @@ const schema = {
   }
 }
 
-export let realm = new Realm({schema: [schema.monitor, schema.activity]});
+export let realm = new Realm({
+  schema: [schema.monitor, schema.activity],
+  schemaVersion: 1,
+  migration: function(oldRealm, newRealm) {
+    if(oldRealm.schemaVersion < 1) {
+      console.log('schema updated')
+      //write your migration function here
+    }
+  }
+  });
 export class LocalStorage {
 
   save(key, value) {
@@ -38,6 +47,7 @@ export class LocalStorage {
     }
     return ob;
   }
+
   clearDB(key){
     realm.write(() => {
       let ob = realm.objects(key);
