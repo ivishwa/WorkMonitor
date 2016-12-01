@@ -44,6 +44,13 @@ export class LocalStorage {
       realm.delete(ob)
     })
   }
+
+  update({callback, ...rest}){
+    realm.write(() => {
+      if(typeof callback === 'function')
+        callback(...rest);
+    })
+  }
 }
 
 const ls = new LocalStorage();
