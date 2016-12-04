@@ -16,7 +16,7 @@ class App extends Component {
         <ActivityList />
         <ActionButton
           buttonColor="rgba(231,76,60,1)"
-          onPress={() => console.log("Hiee")}
+          onPress={() => Actions.activityNew()}
         />
       </View>
     );
