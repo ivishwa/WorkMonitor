@@ -55,10 +55,9 @@ export class LocalStorage {
     })
   }
 
-  update({callback, ...rest}){
+  update(callback, args){
     realm.write(() => {
-      if(typeof callback === 'function')
-        callback(...rest);
+        callback.apply(this, args);
     })
   }
 }
