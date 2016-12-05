@@ -27,7 +27,6 @@ class Activity extends Component {
 				res['0'].isStarted = true
 				res['0'].records.push({startTime: new Date(), endTime: new Date() })
 			}, [selectedActivity]);
-
   		} else {
   			LS.update((res) => {
 				res['0'].isStarted = false
@@ -35,6 +34,7 @@ class Activity extends Component {
 				lastItem.endTime = new Date();
 			}, [selectedActivity]);
   		}
+  		Actions.refresh();
 	}
 	
 	render() {
