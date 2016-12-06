@@ -7,6 +7,9 @@ import {
   List,
   ListItem
 } from 'react-native-elements';
+import {
+  Actions
+} from 'react-native-router-flux';
 export  default class MenuComponent extends Component{
   render(){
     return (
@@ -17,7 +20,7 @@ export  default class MenuComponent extends Component{
       title="ActivityList"
       />
       <ListItem
-      onPress={() => console.log("List")}
+      onPress={() => Actions.report()}
       title="Reports"
       />
       </List>
