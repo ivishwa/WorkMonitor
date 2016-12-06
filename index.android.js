@@ -15,6 +15,7 @@ import {observer} from 'mobx-react/native';
 import App from './Components/App';
 import Activity from './Components/Activity/Activity';
 import ActivityNew from './Components/Activity/ActivityNew';
+import Report from './Components/Reports';
 
 import MenuComponent from './Components/MenuComponent';
 import menuButton from './Components/NavigationItems';
@@ -44,6 +45,7 @@ export default class WorkMonitor extends Component {
             <Scene key="app" component={App} title="Activity" initial={true} toggleSideMenu={this.toggleSideMenu}/>
             <Scene key="activity" component={Activity} title="Activity" toggleSideMenu={this.toggleSideMenu}/>
             <Scene key="activityNew" component={ActivityNew} title="New" toggleSideMenu={this.toggleSideMenu}/>
+            <Scene key="report" component={Report} title="Report" toggleSideMenu={this.toggleSideMenu}/>
           </Scene>
         </Router>
       </DrawerLayoutAndroid>
