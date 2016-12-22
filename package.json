@@ -23,7 +23,9 @@
     "react-native-navbar": "^1.5.4",
     "react-native-router-flux": "^3.36.0",
     "react-native-vector-icons": "^3.0.0",
-    "realm": "^0.14.3"
+    "realm": "^0.14.3",
+    "victory": "^0.14.2",
+    "victory-native": "^0.6.0"
   },
   "jest": {
     "preset": "jest-react-native"
